@@ -1,66 +1,77 @@
-Work Study & Routine Tracker
+📊 Work Study & Routine Tracker
 
-A web-based productivity and study tracking system designed for employees who study after work.
-The system helps users manage daily routines, track study activities, and monitor monthly performance through automated summaries.
+A modern web-based productivity system designed to help employees balance work, health, and studying after work.
 
-Overview
+This application tracks daily routines, study activities, and monthly performance with automatic analytics and a clean dashboard-style interface.
 
-This project provides a structured way to balance work, health, and learning by tracking:
+✨ Key Features
+🗓️ Daily Routine Tracking
 
-Daily routines (morning routine, office hours, diet, workout, steps, hydration)
+Track essential daily activities:
 
-Study activities (study, revision, practice questions, notes)
+🌅 Morning Routine
 
-Daily completion percentage
+🏢 Office Hours (8h)
 
-Monthly performance summaries
+🥗 Diet
 
-Dynamic month-based views
+🏋🏽‍♀️ Workout
 
-It is designed to be simple, intuitive, and accessible from any laptop browser.
+👣 Steps
 
-Features
-Daily Tracking
+💧 Hydration
 
-Checkbox-based routine tracking
+Each day automatically calculates a completion percentage.
 
-Study session tagging system
+📚 Study Session Tracking
 
-Automatic daily completion percentage
+Users can log study activities with tags:
 
-Clean, easy-to-read table layout
+📖 Study
 
-Monthly View
+🔁 Revision
 
-Table automatically displays the selected month
+✍🏽 Practice Questions
 
-Month selector linked to the summary panel
+📝 Notes
 
-Real-time updates when data changes
+This helps measure learning consistency and focus.
 
-Monthly Summary
+📅 Monthly View & Summary
 
-Total days in the month
+Table displays only the selected month.
 
-Active days
+Monthly summary includes:
 
-Study days
+📅 Total days
 
-Average completion percentage
+✅ Active days
 
-Best-performing day
+📚 Study days
 
-Consistency rate
+📊 Average completion %
 
-User Experience
+🏆 Best day
 
-Minimal and professional interface
+🔥 Consistency rate
 
-Emoji-based visual cues for clarity
+Selecting a month automatically updates the table and analytics.
 
-Responsive and lightweight design
+🎯 Smart Progress Calculation
 
-Technologies Used
+Real-time updates when tasks are ticked.
+
+Visual progress bars for each day.
+
+Accurate monthly performance metrics.
+
+🖥️ Live Demo
+
+Access the live version here:
+
+🔗 https://zintlejita.github.io/employee-study-routine-tracker/ 
+
+🛠️ Technologies Used
 
 HTML5
 
@@ -68,58 +79,53 @@ CSS3
 
 JavaScript (Vanilla JS)
 
-No external frameworks were used to keep the system lightweight and easy to understand.
+This project is lightweight, fast, and framework-free.
 
-How to Use
+## 📸 System Preview
 
-Open the live site or index.html in a browser.
+### 🖥️ Dashboard View
+![Dashboard](screenshots/dashboard.png)
 
-Select the month from the dropdown.
+### 📊 Monthly Summary
+![Monthly Summary](screenshots/monthly-summary.png)
 
-Tick checkboxes for completed tasks.
+### 🗓️ Month Switching
+![Month Switching](screenshots/month-switch.png)
 
-Select study tags where applicable.
 
-View automatic updates in the monthly summary.
 
-Live Demo
+🎯 Purpose of the Project
 
-You can access the live version here:
+This system was built to:
 
-🔗 https://zintlejita.github.io/employee-study-routine-tracker/
+Help working professionals manage routines and studying
 
-Project Purpose
+Encourage consistency and productivity
 
-This project was built to:
+Demonstrate real-world system design and logic
 
-Support employees who study after work
+Showcase front-end development and UX thinking
 
-Encourage consistency in routines and learning
+It also serves as a portfolio project that simulates real corporate productivity software.
 
-Demonstrate practical system design and logic
+🚀 Future Enhancements
 
-Showcase front-end development and productivity system thinking
+Planned improvements:
 
-It also serves as a portfolio project demonstrating real-world problem-solving and user-focused design.
+👤 User accounts & login system
 
-Future Improvements
+☁️ Cloud data storage (Firebase / Supabase)
 
-Planned enhancements include:
+👥 Multi-employee dashboard
 
-User login and profiles
+📈 Charts & analytics
 
-Cloud-based data storage (Firebase / Supabase)
+📄 Export reports (Excel / PDF)
 
-Multi-employee dashboard
+🏆 Productivity scoring system
 
-Weekly and yearly analytics
+💼 Admin & manager panel
 
-Charts and visual reports
-
-Export to Excel / PDF
-
-Admin panel for managers
-
-Author
+👩🏽‍💻 Author
 
 Developed by Zintle Jita
