@@ -92,8 +92,6 @@ This project is lightweight, fast, and framework-free.
 ### 🗓️ Month Switching
 ![Month Switching](screenshots/month-switch.png)
 
-
-
 🎯 Purpose of the Project
 
 This system was built to:
