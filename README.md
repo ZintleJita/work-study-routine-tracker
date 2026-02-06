@@ -84,13 +84,11 @@ This project is lightweight, fast, and framework-free.
 ## 📸 System Preview
 
 ### 🖥️ Dashboard View
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/ZintleJita/work-study-routine-tracker/main/screenshots/dashboard.png)
 
-### 📊 Monthly Summary
-![Monthly Summary](screenshots/monthly-summary.png)
+![Monthly Summary](https://raw.githubusercontent.com/ZintleJita/work-study-routine-tracker/main/screenshots/monthly-summary.png)
 
-### 🗓️ Month Switching
-![Month Switching](screenshots/month-switch.png)
+![Month Switching](https://raw.githubusercontent.com/ZintleJita/work-study-routine-tracker/main/screenshots/month-switch.png)
 
 🎯 Purpose of the Project
 
