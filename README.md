@@ -81,16 +81,16 @@ JavaScript (Vanilla JS)
 
 This project is lightweight, fast, and framework-free.
 
-## 📸 System Preview
+## 🖥️ System Preview
 
-### 🖥️ Dashboard View
-![Dashboard](screenshots/dashboard.png)
+### Dashboard View
+![Dashboard](dashboard.png)
 
-### 📊 Monthly Summary
-![Monthly Summary](screenshots/monthly-summary.png)
+### Monthly Summary
+![Monthly Summary](summary.png)
 
-### 🗓️ Month Switching
-![Month Switching](screenshots/month-switch.png)
+### Month Switching
+![Month Switching](switch.png)
 
 🎯 Purpose of the Project
 
