@@ -102,7 +102,7 @@ Encourage consistency and productivity
 
 Demonstrate real-world system design and logic
 
-Showcase front-end development and UX thinking
+Showcase front-end development and UX thinking,
 
 It also serves as a portfolio project that simulates real corporate productivity software.
 
