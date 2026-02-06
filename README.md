@@ -69,7 +69,7 @@ Accurate monthly performance metrics.
 
 Access the live version here:
 
-🔗 https://zintlejita.github.io/employee-study-routine-tracker/ 
+🔗 https://zintlejita.github.io/work-study-routine-tracker/ 
 
 🛠️ Technologies Used
 
