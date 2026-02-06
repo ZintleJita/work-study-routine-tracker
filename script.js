@@ -41,7 +41,12 @@ function generateRows(year = new Date().getFullYear(), month = new Date().getMon
     dayCount++;
   }
 }
-
+document.addEventListener("mousedown", function (e) {
+  if (e.target.tagName === "OPTION" && e.target.parentElement.classList.contains("tags")) {
+    e.preventDefault(); // stop default select behavior
+    e.target.selected = !e.target.selected;
+  }
+});
 
 function calculateProgress(row) {
   const tasks = row.querySelectorAll(".task");
@@ -158,3 +163,4 @@ document.addEventListener("change", () => {
 // Default to current month
 monthSelect.value = new Date().getMonth();
 calculateMonthlySummary(new Date().getMonth());
+
