@@ -55,6 +55,8 @@ Monthly summary includes:
 
 🔥 Consistency rate
 
+📌 Daily submission lock feature added
+
 Selecting a month automatically updates the table and analytics.
 
 🎯 Smart Progress Calculation
