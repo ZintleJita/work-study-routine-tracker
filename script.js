@@ -23,11 +23,8 @@ function isPastDate(date) {
  ***************************************/
 function lockRow(row) {
   row.classList.add("locked");
-
-  // Disable all inputs and dropdowns
-  row.querySelectorAll("input, select").forEach(el => {
-    el.disabled = true;
-  });
+  row.querySelectorAll("input, select").forEach(el => el.disabled = true);
+  calculateProgress(row); // recalc on lock to freeze %
 }
 
 
@@ -70,30 +67,37 @@ function generateRows(year = new Date().getFullYear(), month = new Date().getMon
           <div class="progress-fill">0%</div>
         </div>
       </td>
+      <td>
+  <button class="lock-btn">🔒</button>
+</td>
     `;
 
     tableBody.appendChild(row);
 
-    // 🔒 Automatically lock past days
-    if (isPastDate(isoDate)) {
-      lockRow(row);
-    }
-
+   /***************************************
+ * RESTORE MANUALLY LOCKED DAYS
+ ***************************************/
+const dateKey = isoDate.split("T")[0];
+if (localStorage.getItem("locked-" + dateKey)) {
+  lockRow(row);
+}
     dayCount++;
   }
 }
 
 
 /***************************************
- * TAGS MULTI-SELECT FIX (ALLOW TOGGLE)
+ * TAG MULTI-SELECT TOGGLE 
  ***************************************/
-document.addEventListener("mousedown", function (e) {
-  if (e.target.tagName === "OPTION" && e.target.parentElement.classList.contains("tags")) {
-    e.preventDefault(); // Stop default behavior
-    e.target.selected = !e.target.selected; // Toggle selection
+document.addEventListener("change", (e) => {
+  const row = e.target.closest("tr");
+  if (row && !row.classList.contains("locked")) {
+    if (e.target.classList.contains("tags") || e.target.classList.contains("task")) {
+      calculateProgress(row);
+      calculateMonthlySummary(parseInt(monthSelect.value));
+    }
   }
 });
-
 
 /***************************************
  * CALCULATE DAILY PROGRESS PERCENTAGE
@@ -103,25 +107,38 @@ function calculateProgress(row) {
   const tags = row.querySelector(".tags");
 
   let completed = 0;
-  let total = tasks.length + 1; // Tags count as 1 task
+  let total = tasks.length + 1; // tags count as 1
 
-  // Count checked tasks
   tasks.forEach(task => {
     if (task.checked) completed++;
   });
 
-  // Count tags if any selected
-  if ([...tags.selectedOptions].length > 0) completed++;
+  if (tags && tags.selectedOptions.length > 0) {
+    completed++;
+  }
 
-  // Calculate percentage
   const percentage = Math.round((completed / total) * 100);
 
-  // Update progress bar
   const bar = row.querySelector(".progress-fill");
   bar.style.width = percentage + "%";
   bar.textContent = percentage + "%";
 }
+/***************************************
+ * MANUAL DAY LOCK SYSTEM (USER CONTROL)
+ ***************************************/
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("lock-btn")) {
+    const row = e.target.closest("tr");
+    const dateValue = row.querySelector("td[data-date]").dataset.date;
+    const dateKey = dateValue.split("T")[0];
 
+    // Save lock state
+    localStorage.setItem("locked-" + dateKey, "true");
+
+    // Lock row
+    lockRow(row);
+  }
+});
 
 /***************************************
  * UPDATE PROGRESS WHEN USER MAKES CHANGES
@@ -199,10 +216,10 @@ function calculateMonthlySummary(monthIndex) {
         if (task.checked) completed++;
       });
 
-      if ([...tags.selectedOptions].length > 0) {
-        completed++;
-        studyDays++;
-      }
+    if (tags && tags.selectedOptions.length > 0) {
+      completed++;
+      studyDays++;
+    }
 
       const percent = Math.round((completed / totalTasks) * 100);
       totalPercent += percent;
@@ -244,15 +261,19 @@ monthSelect.addEventListener("change", () => {
 /***************************************
  * UPDATE SUMMARY WHEN DATA CHANGES
  ***************************************/
-document.addEventListener("change", () => {
+document.addEventListener("change", (e) => {
+  const row = e.target.closest("tr");
+  if (row && !row.classList.contains("locked")) {
+    calculateProgress(row);
+  }
   calculateMonthlySummary(parseInt(monthSelect.value));
 });
-
 
 /***************************************
  * DEFAULT TO CURRENT MONTH
  ***************************************/
 monthSelect.value = new Date().getMonth();
 calculateMonthlySummary(new Date().getMonth());
+
 
 
