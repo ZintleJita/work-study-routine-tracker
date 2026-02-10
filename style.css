@@ -111,3 +111,26 @@ tr.locked select {
   font-size: 14px;
   color: #ef4444; /* red lock */
 }
+/***************************************
+ * LOCK BUTTON STYLES
+ ***************************************/
+.lock-btn {
+  background: #020617;
+  color: white;
+  border: 1px solid #1f2933;
+  padding: 3px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.lock-btn:hover {
+  background: #111827;
+}
+
+tr.locked .lock-btn {
+  background: #dc2626;
+  color: white;
+}
+
+
