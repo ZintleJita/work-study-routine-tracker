@@ -10,6 +10,10 @@ h1 {
   margin-bottom: 20px;
 }
 
+
+/***************************************
+ * TABLE LAYOUT STYLES
+ ***************************************/
 table {
   width: 100%;
   border-collapse: collapse;
@@ -26,6 +30,10 @@ th {
   background: #020617;
 }
 
+
+/***************************************
+ * INPUT & SELECT STYLES
+ ***************************************/
 input[type="checkbox"] {
   transform: scale(1.1);
 }
@@ -37,6 +45,10 @@ select {
   padding: 3px;
 }
 
+
+/***************************************
+ * PROGRESS BAR STYLES
+ ***************************************/
 .progress-bar {
   background: #020617;
   border-radius: 6px;
@@ -53,6 +65,11 @@ select {
   padding-right: 4px;
   color: black;
 }
+
+
+/***************************************
+ * MONTHLY SUMMARY BOX STYLES
+ ***************************************/
 .summary-box {
   background: #020617;
   border: 1px solid #1f2933;
@@ -69,4 +86,28 @@ select {
   margin-top: 8px;
   font-size: 14px;
   line-height: 1.6;
+}
+
+
+/***************************************
+ * SUBMISSION LOCK STYLES (NEW)
+ ***************************************/
+
+/* Locked row appearance */
+tr.locked {
+  opacity: 0.45;
+  background: #020617;
+}
+
+/* Disable interaction visually */
+tr.locked input,
+tr.locked select {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Optional: lock icon style (if you add a submit button later) */
+.lock-icon {
+  font-size: 14px;
+  color: #ef4444; /* red lock */
 }
